@@ -1,5 +1,9 @@
 <?php
-
+if ($_GET) {
+    if (isset($_GET['error_message'])) {
+        $error_message = $_GET['error_message'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +17,7 @@
         <div>
             <h1>Bienvenido/a</h1>
             <br>
-            <form action='PHP/login.php' method ='POST'>
+            <form action='PHP/login.php' method='POST'>
                 <div>
                     <input type="text" name="usuraio" placeholder="usuario" required>
                     <br><br>
@@ -25,5 +29,8 @@
                 </div>
             </form>
         </div>
+        <?php if (isset($error_message)) { ?>
+            <div><strong><?php echo $error_message; ?></strong></div>
+        <?php } ?>
     </center>
 </body </html

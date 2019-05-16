@@ -1,3 +1,10 @@
+<?php
+if ($_GET) {
+    if (isset($_GET['error_message'])) {
+        $error_message = $_GET['error_message'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +17,7 @@
         <div>
             <h1>Registro de Tienda</h1>
             <br>
-            <form action='registrar_tienda.php' method ='POST'>
+            <form action='registrar_tienda.php' method='POST'>
                 <div>
                     <input type="text" name="nombretienda" placeholder="Nombre de la tienda" required>
                     <br><br>
@@ -24,7 +31,9 @@
                 </div>
             </form>
         </div>
+        <?php if (isset($error_message)) { ?>
+            <div><strong><?php echo $error_message; ?></strong></div>
+        <?php } ?>
     </center>
 </body>
 </html>
-<?php

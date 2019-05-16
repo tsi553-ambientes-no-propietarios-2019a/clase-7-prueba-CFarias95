@@ -11,7 +11,7 @@ if(isset($_POST['usuraio'])  and isset($_POST['contraseña'])){
             $_SESSION['user']="$usuario";
             header('Location: inicio.php');
         }else{
-            header('Location: ../index.php?usuario o clave incorrectos');
+            header('Location: ../index.php?error_message=usuario o clave incorrectos');
         }
     }
    
